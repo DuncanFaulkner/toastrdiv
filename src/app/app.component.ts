@@ -6,13 +6,15 @@ import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
   selector: 'app-root',
   template: `
   <h1><a (click)="onClick()">Click</a></h1>
-  <div toastContainer class="toast-top-left"></div>
+  <div toastContainer class="toast-bottom-full-width" [ngClass]="{'night-mode': nightMode}"></div>
 `,
 })
 export class AppComponent implements OnInit {
   @ViewChild(ToastContainerDirective) toastContainer: ToastContainerDirective;
 
-  constructor(private toastrService: ToastrService) {}
+  public nightMode = true;
+
+  constructor(private toastrService: ToastrService) { }
   ngOnInit() {
     this.toastrService.overlayContainer = this.toastContainer;
   }

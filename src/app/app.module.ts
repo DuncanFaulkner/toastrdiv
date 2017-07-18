@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
 
-    ToastrModule.forRoot({positionClass: 'inline'}),
+    ToastrModule.forRoot({positionClass: 'toast-bottom-full-width', timeOut: 0}),
     ToastContainerModule.forRoot(),
   ],
   providers: [],
